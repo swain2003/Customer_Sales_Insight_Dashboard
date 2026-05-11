@@ -17,7 +17,7 @@ customer_sales_insights/
 ├── data/
 │   ├── raw/                    ← Generated raw CSV (with injected noise)
 │   └── processed/              ← Cleaned CSV + per-KPI export CSVs
-|   └── sales_insights         ← Data Base File
+|   └── sales_insights          ← Data Base File
 ├── src/
 │   ├── generate_data.py        ← Simulate 12,000 e-commerce transactions
 │   ├── etl/
