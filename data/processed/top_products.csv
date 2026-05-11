@@ -1,0 +1,21 @@
+product_id,product_name,product_category,times_ordered,units_sold,total_revenue,avg_price
+P0007,Speaker,Electronics,257,366,795230.83,2200.46
+P0001,Laptop,Electronics,262,357,620067.81,1746.84
+P0005,Smartwatch,Electronics,220,309,602053.26,1938.87
+P0006,Camera,Electronics,243,324,578083.97,1782.46
+P0009,Keyboard,Electronics,239,317,412590.83,1298.03
+P0003,Tablet,Electronics,249,321,323305.71,1009.47
+P0004,Headphones,Electronics,235,333,306107.03,911.7
+P0008,Monitor,Electronics,247,327,213791.88,658.14
+P0025,Toaster,Home & Kitchen,251,351,198256.04,561.0
+P0010,Mouse,Electronics,262,360,195818.3,544.65
+P0002,Smartphone,Electronics,259,353,188654.37,532.2
+P0029,Cushion,Home & Kitchen,252,348,172250.96,497.23
+P0021,Blender,Home & Kitchen,243,343,162875.77,476.52
+P0022,Coffee Maker,Home & Kitchen,237,324,134116.76,415.37
+P0030,Cookware Set,Home & Kitchen,252,353,127436.57,361.13
+P0041,Yoga Mat,Sports,242,333,117816.57,353.26
+P0049,Protein Powder,Sports,235,341,108935.09,318.65
+P0026,Bed Sheets,Home & Kitchen,249,354,76331.86,215.85
+P0019,Boots,Clothing,270,369,75118.17,203.27
+P0023,Air Fryer,Home & Kitchen,234,311,67839.2,217.71

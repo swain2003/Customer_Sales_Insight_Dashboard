@@ -1,0 +1,5 @@
+customer_segment,customer_count,segment_revenue,avg_order_value
+Regular,840,3079277.78,517.26
+Occasional,1252,2754196.55,541.84
+One-Time,352,310293.45,528.61
+Loyal,33,199377.65,528.85

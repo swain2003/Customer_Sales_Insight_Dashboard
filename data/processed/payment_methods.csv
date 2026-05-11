@@ -1,0 +1,7 @@
+payment_method,transactions,total_revenue,avg_order_value,usage_pct
+Upi,2011,1047866.99,521.07,16.76
+Cod,2011,1045278.81,519.78,16.76
+Credit Card,2007,1020478.59,508.46,16.73
+Wallet,2003,1078684.22,538.53,16.69
+Net Banking,1995,1114955.78,558.88,16.63
+Debit Card,1973,1035881.04,525.03,16.44
