@@ -17,7 +17,7 @@ customer_sales_insights/
 ├── data/
 │   ├── raw/                    ← Generated raw CSV (with injected noise)
 │   └── processed/              ← Cleaned CSV + per-KPI export CSVs
-│
+|   └── sales_insights         ← Data Base File
 ├── src/
 │   ├── generate_data.py        ← Simulate 12,000 e-commerce transactions
 │   ├── etl/
@@ -27,13 +27,9 @@ customer_sales_insights/
 │   └── analysis/
 │       └── run_analysis.py     ← Run queries → export CSVs for BI tools
 │
-├── notebooks/
-│   └── eda.ipynb               ← Exploratory Data Analysis (optional)
-│
 ├── dashboard_exports/          ← Screenshots / PDF exports of dashboards
 ├── docs/
 │   └── dashboard_layout.md     ← Power BI / Tableau layout guide
-├── tests/
 ├── requirements.txt
 └── README.md
 ```
