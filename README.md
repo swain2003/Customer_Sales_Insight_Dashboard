@@ -24,6 +24,8 @@ customer_sales_insights/
 │   │   └── etl_pipeline.py     ← Extract → Transform → Load (SQLite)
 │   ├── sql/
 │   │   └── sales_queries.sql   ← All analytical SQL queries
+│   ├── dashboard/
+│   │   └── app.py              ← Streamlit frontend dashboard
 │   └── analysis/
 │       └── run_analysis.py     ← Run queries → export CSVs for BI tools
 │
@@ -75,6 +77,12 @@ python src/analysis/run_analysis.py
 
 **Power BI**: Home → Get Data → Text/CSV → select any file in `data/processed/`  
 **Tableau**: Connect → To a File → Text File → select CSV
+
+### 6. Run Interactive Frontend Dashboard
+
+```bash
+streamlit run src/dashboard/app.py
+```
 
 ---
 
