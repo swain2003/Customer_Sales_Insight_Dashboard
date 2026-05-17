@@ -57,8 +57,7 @@ if filtered_df.empty:
     st.warning("No records found for the selected filters.")
     st.stop()
 
-order_revenue = filtered_df.groupby("order_id")["revenue"].sum()
-avg_order_value = order_revenue.mean() if not order_revenue.empty else 0.0
+avg_order_value = filtered_df.groupby("order_id")["revenue"].sum().mean()
 
 kpi1, kpi2, kpi3, kpi4 = st.columns(4)
 kpi1.metric("💰 Total Revenue", f"₹{filtered_df['revenue'].sum():,.0f}")
@@ -71,12 +70,12 @@ monthly = (
     .agg(total_revenue=("revenue", "sum"), total_orders=("order_id", "nunique"))
     .sort_values("year_month")
 )
-category = (
+category_revenue = (
     filtered_df.groupby("product_category", as_index=False)
     .agg(total_revenue=("revenue", "sum"))
     .sort_values("total_revenue", ascending=False)
 )
-products = (
+top_products = (
     filtered_df.groupby("product_name", as_index=False)
     .agg(total_revenue=("revenue", "sum"))
     .sort_values("total_revenue", ascending=False)
@@ -103,7 +102,7 @@ with trend_col:
 with category_col:
     st.subheader("Revenue by Product Category")
     st.plotly_chart(
-        px.pie(category, values="total_revenue", names="product_category", hole=0.45),
+        px.pie(category_revenue, values="total_revenue", names="product_category", hole=0.45),
         use_container_width=True,
     )
 
@@ -112,7 +111,7 @@ with products_col:
     st.subheader("Top 10 Products by Revenue")
     st.plotly_chart(
         px.bar(
-            products,
+            top_products,
             x="total_revenue",
             y="product_name",
             orientation="h",
