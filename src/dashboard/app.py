@@ -71,7 +71,7 @@ kpi4.metric("📦 Avg Order Value", f"₹{avg_order_value:,.2f}")
 
 monthly = (
     filtered_df.groupby("year_month", as_index=False)
-    .agg(total_revenue=("revenue", "sum"), total_orders=("order_id", "nunique"))
+    .agg(total_revenue=("revenue", "sum"))
     .sort_values("year_month")
 )
 category_revenue = (
