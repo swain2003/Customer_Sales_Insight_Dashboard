@@ -1,172 +1,311 @@
+<div align="center">
+
 # 📊 Customer Sales Insights Dashboard
 
-> End-to-end data analytics project — simulated e-commerce transaction analysis using Python, SQL, and BI tools.
+### End-to-End Customer Analytics, ETL & BI Dashboard System
 
-![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
-![SQLite](https://img.shields.io/badge/SQLite-3.x-green?logo=sqlite)
-![Pandas](https://img.shields.io/badge/Pandas-2.x-150458?logo=pandas)
-![License](https://img.shields.io/badge/License-MIT-yellow)
+<br>
+
+[![Live Demo](https://img.shields.io/badge/🚀%20Live%20Demo-Streamlit-success?style=for-the-badge)](https://customer-salesinsight-dashboard.streamlit.app/)
+
+![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python)
+![Pandas](https://img.shields.io/badge/Pandas-Analytics-150458?style=for-the-badge&logo=pandas)
+![NumPy](https://img.shields.io/badge/NumPy-ScientificComputing-013243?style=for-the-badge&logo=numpy)
+![SQLite](https://img.shields.io/badge/SQLite-Database-003B57?style=for-the-badge&logo=sqlite)
+
+![SQL](https://img.shields.io/badge/SQL-Analytics-blue?style=for-the-badge)
+![ETL](https://img.shields.io/badge/ETL-Pipeline-success?style=for-the-badge)
+![Data Engineering](https://img.shields.io/badge/DataEngineering-Workflow-orange?style=for-the-badge)
+![Data Analytics](https://img.shields.io/badge/DataAnalytics-Insights-purple?style=for-the-badge)
+
+![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?style=for-the-badge&logo=streamlit)
+![Power BI](https://img.shields.io/badge/PowerBI-BusinessIntelligence-yellow?style=for-the-badge&logo=powerbi)
+![Tableau](https://img.shields.io/badge/Tableau-Visualization-blue?style=for-the-badge&logo=tableau)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-darkgreen?style=for-the-badge)
+
+![Seaborn](https://img.shields.io/badge/Seaborn-StatisticalCharts-4C72B0?style=for-the-badge)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?style=for-the-badge&logo=jupyter)
+![Git](https://img.shields.io/badge/Git-VersionControl-F05032?style=for-the-badge&logo=git)
+![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)
+
+</div>
 
 ---
 
-## 🗂️ Project Structure
+# 🚀 Live Dashboard
 
-```
+🔗 **Streamlit Deployment:**  
+https://customer-salesinsight-dashboard.streamlit.app/
+
+---
+
+# 📌 Project Overview
+
+The **Customer Sales Insights Dashboard** is a recruiter-focused end-to-end analytics project built to simulate realistic e-commerce transaction analysis workflows using **Python**, **SQL**, **ETL pipelines**, and **Business Intelligence tools**.
+
+The project processes and analyzes **12,000+ customer transaction records**, performs data cleaning and feature engineering, generates KPI exports for BI tools, and visualizes insights through an interactive **Streamlit dashboard**.
+
+This project demonstrates:
+- Data Engineering
+- ETL Pipeline Design
+- SQL Analytics
+- Data Cleaning & Transformation
+- Dashboard Development
+- Business Intelligence Reporting
+
+---
+
+# ✨ Key Features
+
+## 📊 Analytics & KPI Tracking
+
+- Monthly Revenue Analysis
+- Category-wise Sales Trends
+- Regional Performance Tracking
+- Top Selling Products
+- Payment Method Distribution
+- Customer Segmentation Analytics
+- Quarterly Sales Trends
+- Weekend vs Weekday Analysis
+
+---
+
+## 🧹 ETL Pipeline
+
+- Duplicate record removal
+- Missing value handling
+- Invalid data correction
+- Feature engineering
+- Revenue calculation
+- Customer segmentation
+- Automated SQLite loading
+- Processed CSV export generation
+
+---
+
+## 📈 Interactive Dashboard
+
+- Streamlit-powered analytics dashboard
+- KPI visualizations
+- Interactive charts and metrics
+- Business-ready reporting UI
+- BI tool compatibility
+
+---
+
+# 🧰 Tech Stack
+
+| Category | Technologies |
+|---|---|
+| Programming Language | Python 3.10+ |
+| Data Processing | Pandas, NumPy |
+| Database | SQLite |
+| ETL | Custom Python ETL Pipeline |
+| Dashboard | Streamlit |
+| Visualization | Power BI, Tableau, Matplotlib, Seaborn |
+| Version Control | Git & GitHub |
+
+---
+
+# 📂 Project Structure
+
+```text
 customer_sales_insights/
 │
 ├── data/
-│   ├── raw/                    ← Generated raw CSV (with injected noise)
-│   └── processed/              ← Cleaned CSV + per-KPI export CSVs
-|   └── sales_insights          ← Data Base File
-├── src/
-│   ├── generate_data.py        ← Simulate 12,000 e-commerce transactions
-│   ├── etl/
-│   │   └── etl_pipeline.py     ← Extract → Transform → Load (SQLite)
-│   ├── sql/
-│   │   └── sales_queries.sql   ← All analytical SQL queries
-│   ├── dashboard/
-│   │   └── app.py              ← Streamlit frontend dashboard
-│   └── analysis/
-│       └── run_analysis.py     ← Run queries → export CSVs for BI tools
+│   ├── raw/
+│   ├── processed/
+│   └── sales_insights.db
 │
-├── dashboard_exports/          ← Screenshots / PDF exports of dashboards
+├── src/
+│   ├── generate_data.py
+│   ├── etl/
+│   │   └── etl_pipeline.py
+│   ├── sql/
+│   │   └── sales_queries.sql
+│   ├── dashboard/
+│   │   └── app.py
+│   └── analysis/
+│       └── run_analysis.py
+│
+├── dashboard_exports/
 ├── docs/
-│   └── dashboard_layout.md     ← Power BI / Tableau layout guide
 ├── requirements.txt
 └── README.md
 ```
 
 ---
 
-## ⚡ Quick Start
+# ⚡ Quick Start
 
-### 1. Clone & Install
+## 1️⃣ Clone Repository
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/customer-sales-insights.git
+
 cd customer-sales-insights
+```
+
+---
+
+## 2️⃣ Create & Activate Virtual Environment
+
+### Windows (PowerShell)
+
+```powershell
+python -m venv .venv
+
+.venv\Scripts\Activate.ps1
+```
+
+### Linux / macOS
+
+```bash
+python -m venv .venv
+
+source .venv/bin/activate
+```
+
+---
+
+## 3️⃣ Install Dependencies
+
+```bash
 pip install -r requirements.txt
 ```
 
-### 2. Generate Dataset
+---
+
+## 4️⃣ Generate Dataset
 
 ```bash
 python src/generate_data.py
-# → data/raw/transactions.csv  (12,000 rows)
 ```
 
-### 3. Run ETL Pipeline
+### Generated Output
+
+```text
+data/raw/transactions.csv
+```
+
+---
+
+## 5️⃣ Run ETL Pipeline
 
 ```bash
 python src/etl/etl_pipeline.py
-# → data/sales_insights.db      (SQLite)
-# → data/processed/transactions_clean.csv
 ```
 
-### 4. Export KPI CSVs (for Power BI / Tableau)
+### Generated Output
+
+```text
+data/sales_insights.db
+data/processed/transactions_clean.csv
+```
+
+---
+
+## 6️⃣ Export KPI CSVs
 
 ```bash
 python src/analysis/run_analysis.py
-# → data/processed/monthly_revenue.csv
-# → data/processed/category_sales.csv
-# → data/processed/top_products.csv
-# → ...and more
 ```
 
-### 5. Connect BI Tool
+### KPI Exports
 
-**Power BI**: Home → Get Data → Text/CSV → select any file in `data/processed/`  
-**Tableau**: Connect → To a File → Text File → select CSV
+```text
+monthly_revenue.csv
+category_sales.csv
+top_products.csv
+customer_segments.csv
+region_performance.csv
+```
 
-### 6. Run Interactive Frontend Dashboard
+These CSV exports can be directly used in:
+- Power BI
+- Tableau
+- Excel dashboards
+
+---
+
+## 7️⃣ Run Interactive Dashboard
 
 ```bash
 streamlit run src/dashboard/app.py
 ```
 
----
+### Dashboard URL
 
-## 📐 Dataset Schema
-
-| Column             | Type    | Description                           |
-|--------------------|---------|---------------------------------------|
-| order_id           | TEXT    | Unique order identifier               |
-| customer_id        | TEXT    | Unique customer identifier            |
-| product_id         | TEXT    | Product SKU                           |
-| product_name       | TEXT    | Product display name                  |
-| product_category   | TEXT    | Electronics / Clothing / etc.         |
-| price              | REAL    | Unit price (INR)                      |
-| quantity           | INT     | Units ordered                         |
-| revenue            | REAL    | price × quantity (derived)            |
-| order_date         | DATETIME| Order timestamp                       |
-| year / month       | INT     | Extracted time features               |
-| year_month         | TEXT    | Period string e.g. "2025-03"          |
-| quarter            | INT     | 1–4                                   |
-| day_of_week        | TEXT    | Monday … Sunday                       |
-| is_weekend         | BOOL    | 1 if Sat/Sun                          |
-| payment_method     | TEXT    | Credit Card / UPI / COD / etc.        |
-| region             | TEXT    | North / South / East / West / Central |
-| customer_segment   | TEXT    | One-Time / Occasional / Regular / Loyal|
-
----
-
-## 📊 KPIs Tracked
-
-| KPI                     | Source Query              |
-|-------------------------|---------------------------|
-| Monthly Revenue         | `monthly_revenue`         |
-| Category-wise Sales     | `category_sales`          |
-| Top Products            | `top_products`            |
-| Customer Segments       | `customer_segments`       |
-| Payment Method Mix      | `payment_methods`         |
-| Regional Performance    | `region_performance`      |
-| Quarterly Trend         | `quarterly_trend`         |
-| Weekend vs Weekday      | `day_type_sales`          |
-
----
-
-## 🛠️ Tech Stack
-
-| Layer       | Tool / Library                  |
-|-------------|---------------------------------|
-| Language    | Python 3.10+                    |
-| Data Wrangling | Pandas, NumPy                |
-| Database    | SQLite 3 (via `sqlite3`)        |
-| ETL         | Custom Python pipeline          |
-| BI / Viz    | Power BI Desktop / Tableau Public|
-| Version Control | Git + GitHub               |
-
----
-
-## 🧹 ETL Pipeline — What It Does
-
-```
-RAW CSV (noisy)
-    ↓  Extract
-DataFrame in memory
-    ↓  Transform
-      • Drop duplicates
-      • Impute invalid price (median)
-      • Fix invalid quantity (floor = 1)
-      • Remove future-dated records
-      • Normalize string columns
-      • Engineer: revenue, year/month/quarter/week, is_weekend, customer_segment
-    ↓  Load
-      • SQLite: transactions + dim_product + dim_customer + indexes
-      • Processed CSV
+```text
+http://localhost:8501
 ```
 
 ---
 
-## 📋 Resume Bullet Points (what this project demonstrates)
+# 📐 Dataset Schema
 
-- Analyzed **12,000+** e-commerce transactions using **Python (Pandas)** and **SQL** to uncover sales trends and customer purchasing behavior across **5+ product categories**.
-- Built an **ETL pipeline** ensuring **100% data consistency** — handling missing values, invalid records, and duplicate orders.
-- Engineered KPI exports (monthly revenue, category-wise sales, top products) ready for **Power BI / Tableau** dashboards.
-- Designed a **normalized SQLite schema** with dimension tables and indexes for fast analytical queries.
+| Column | Description |
+|---|---|
+| order_id | Unique order identifier |
+| customer_id | Unique customer identifier |
+| product_id | Product SKU |
+| product_name | Product display name |
+| product_category | Product category |
+| price | Unit price |
+| quantity | Units ordered |
+| revenue | Derived revenue |
+| order_date | Order timestamp |
+| payment_method | Payment type |
+| region | Geographic region |
+| customer_segment | Segmentation label |
 
 ---
 
-## 📄 License
+# 📊 KPIs Tracked
 
-MIT © 2026
+| KPI | Description |
+|---|---|
+| Monthly Revenue | Revenue growth tracking |
+| Category Sales | Product category analysis |
+| Top Products | Best-selling products |
+| Customer Segments | Customer behavior analysis |
+| Payment Mix | Preferred payment methods |
+| Regional Performance | Geography-based insights |
+| Quarterly Trend | Quarterly growth patterns |
+
+---
+
+# 🧠 Resume Highlights
+
+- Processed and analyzed **12,000+ e-commerce transaction records** using **Python, Pandas, and SQL** to uncover business insights and customer behavior patterns.
+- Built an end-to-end **ETL pipeline** for automated data extraction, transformation, validation, and SQLite database loading.
+- Developed KPI exports and interactive dashboards compatible with **Power BI**, **Tableau**, and **Streamlit**.
+- Designed a normalized analytical database structure and optimized reporting workflows for scalable business intelligence analysis.
+
+---
+
+# 📈 Business Impact
+
+✅ Automated analytics workflow  
+✅ BI-ready reporting exports  
+✅ Realistic customer behavior simulation  
+✅ Dashboard-based decision support  
+✅ Recruiter-friendly data engineering showcase  
+
+---
+
+# 👨‍💻 Author
+
+## Anubhaba Swain
+### B.Tech in Information Technology | KIIT University
+
+🔗 LinkedIn:  
+https://www.linkedin.com/in/anubhaba-swain-695a7b176
+
+---
+
+# ⭐ Support
+
+If you found this project useful, consider giving the repository a ⭐ on GitHub.
+
+---
