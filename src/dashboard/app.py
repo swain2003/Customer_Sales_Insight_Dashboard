@@ -57,11 +57,15 @@ if filtered_df.empty:
     st.warning("No records found for the selected filters.")
     st.stop()
 
+kpi_avg_order_value = (
+    filtered_df.groupby("order_id", as_index=False)["revenue"].sum()["revenue"].mean()
+)
+
 kpi1, kpi2, kpi3, kpi4 = st.columns(4)
 kpi1.metric("💰 Total Revenue", f"₹{filtered_df['revenue'].sum():,.0f}")
 kpi2.metric("🛒 Total Orders", f"{filtered_df['order_id'].nunique():,}")
 kpi3.metric("👤 Unique Customers", f"{filtered_df['customer_id'].nunique():,}")
-kpi4.metric("📦 Avg Order Value", f"₹{filtered_df['revenue'].mean():,.2f}")
+kpi4.metric("📦 Avg Order Value", f"₹{kpi_avg_order_value:,.2f}")
 
 monthly = (
     filtered_df.groupby("year_month", as_index=False)
@@ -74,7 +78,7 @@ category = (
     .sort_values("total_revenue", ascending=False)
 )
 products = (
-    filtered_df.groupby(["product_id", "product_name"], as_index=False)
+    filtered_df.groupby("product_name", as_index=False)
     .agg(total_revenue=("revenue", "sum"))
     .sort_values("total_revenue", ascending=False)
     .head(10)
