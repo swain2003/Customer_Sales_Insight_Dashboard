@@ -57,9 +57,7 @@ if filtered_df.empty:
     st.warning("No records found for the selected filters.")
     st.stop()
 
-avg_order_value = (
-    filtered_df.groupby("order_id", as_index=False)["revenue"].sum()["revenue"].mean()
-)
+avg_order_value = filtered_df.groupby("order_id")["revenue"].sum().mean()
 
 kpi1, kpi2, kpi3, kpi4 = st.columns(4)
 kpi1.metric("💰 Total Revenue", f"₹{filtered_df['revenue'].sum():,.0f}")
@@ -112,19 +110,35 @@ c, d = st.columns(2)
 with c:
     st.subheader("Top 10 Products by Revenue")
     st.plotly_chart(
-        px.bar(products, x="total_revenue", y="product_name", orientation="h"),
+        px.bar(
+            products,
+            x="total_revenue",
+            y="product_name",
+            orientation="h",
+            labels={"total_revenue": "Revenue", "product_name": "Product"},
+        ),
         use_container_width=True,
     )
 with d:
     st.subheader("Region-wise Revenue")
     st.plotly_chart(
-        px.bar(regions_df, x="region", y="total_revenue", color="region"),
+        px.bar(
+            regions_df,
+            x="region",
+            y="total_revenue",
+            labels={"total_revenue": "Revenue", "region": "Region"},
+        ),
         use_container_width=True,
     )
 
 st.subheader("Customer Segment Performance")
 st.plotly_chart(
-    px.bar(segments_df, x="customer_segment", y="total_revenue", color="customer_segment"),
+    px.bar(
+        segments_df,
+        x="customer_segment",
+        y="total_revenue",
+        labels={"total_revenue": "Revenue", "customer_segment": "Customer Segment"},
+    ),
     use_container_width=True,
 )
 
