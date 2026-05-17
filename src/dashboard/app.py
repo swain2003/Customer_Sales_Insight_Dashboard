@@ -57,7 +57,8 @@ if filtered_df.empty:
     st.warning("No records found for the selected filters.")
     st.stop()
 
-avg_order_value = filtered_df.groupby("order_id")["revenue"].sum().mean()
+order_revenue = filtered_df.groupby("order_id")["revenue"].sum()
+avg_order_value = order_revenue.mean() if not order_revenue.empty else 0.0
 
 kpi1, kpi2, kpi3, kpi4 = st.columns(4)
 kpi1.metric("💰 Total Revenue", f"₹{filtered_df['revenue'].sum():,.0f}")
@@ -92,22 +93,22 @@ segments_df = (
     .sort_values("total_revenue", ascending=False)
 )
 
-a, b = st.columns(2)
-with a:
+trend_col, category_col = st.columns(2)
+with trend_col:
     st.subheader("Monthly Revenue Trend")
     st.plotly_chart(
         px.line(monthly, x="year_month", y="total_revenue", markers=True),
         use_container_width=True,
     )
-with b:
+with category_col:
     st.subheader("Revenue by Product Category")
     st.plotly_chart(
         px.pie(category, values="total_revenue", names="product_category", hole=0.45),
         use_container_width=True,
     )
 
-c, d = st.columns(2)
-with c:
+products_col, regions_col = st.columns(2)
+with products_col:
     st.subheader("Top 10 Products by Revenue")
     st.plotly_chart(
         px.bar(
@@ -119,7 +120,7 @@ with c:
         ),
         use_container_width=True,
     )
-with d:
+with regions_col:
     st.subheader("Region-wise Revenue")
     st.plotly_chart(
         px.bar(
