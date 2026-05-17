@@ -29,12 +29,16 @@ sales_df = load_data()
 st.sidebar.header("Filters")
 min_date = sales_df["order_date"].min().date()
 max_date = sales_df["order_date"].max().date()
-start_date, end_date = st.sidebar.date_input(
+date_range = st.sidebar.date_input(
     "Date Range",
     value=(min_date, max_date),
     min_value=min_date,
     max_value=max_date,
 )
+if not isinstance(date_range, tuple) or len(date_range) != 2:
+    st.warning("Please select both a start and end date.")
+    st.stop()
+start_date, end_date = date_range
 
 categories = sorted(sales_df["product_category"].dropna().unique())
 regions = sorted(sales_df["region"].dropna().unique())
